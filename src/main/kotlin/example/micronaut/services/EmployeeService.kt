@@ -12,22 +12,22 @@ import org.slf4j.LoggerFactory
 class EmployeeService {
 
     @Inject
-    open lateinit var profileRepository: EmployeeRepository
+     lateinit var employeeRepository: EmployeeRepository
 
-    open fun save(profile: Employee): Employee {
+     fun save(profile: Employee): Employee {
         log.info("Saving Profile :{}", profile)
-        profileRepository.save(profile)
+        employeeRepository.save(profile)
         return profile
     }
 
-    open fun findById(id: Long): Employee {
+     fun findById(id: Long): Employee {
         log.info("Finding Profile by id:{}", id)
-        return profileRepository.findById(id).orElse(null)
+        return employeeRepository.findById(id).orElse(null)
     }
 
-    open fun deleteById(id: Long): Boolean {
+     fun deleteById(id: Long): Boolean {
         try {
-            profileRepository.deleteById(id)
+            employeeRepository.deleteById(id)
             log.info("Deleting Profile by id:{}", id)
             return true
         } catch (e: Exception) {
@@ -37,14 +37,14 @@ class EmployeeService {
         }
     }
 
-    open fun findAll(): Iterable<Employee> {
+     fun findAll(): Iterable<Employee> {
         log.info("Find All")
-        return profileRepository.findAll()
+        return employeeRepository.findAll()
     }
 
-    open fun update(profile: Employee): Employee {
+     fun update(profile: Employee): Employee {
         log.info("update {}", profile)
-        return profileRepository.update(profile)
+        return employeeRepository.update(profile)
 
     }
 

@@ -11,36 +11,36 @@ import javax.inject.Inject
 class EmployeeController {
 
     @Inject
-    lateinit var profileService: EmployeeService
+    lateinit var employeeService: EmployeeService
 
     @Post("/save")
     fun save(@Body profile: Employee): Employee {
         log.info("Saving Profile :{}", profile)
-        return profileService.save(profile)
+        return employeeService.save(profile)
     }
 
     @Get("/get")
     fun findById(id: Long): Employee {
         log.info("Finding Profile: {}", id)
-        return profileService.findById(id)
+        return employeeService.findById(id)
     }
 
     @Delete("/delete/{id}")
     fun deleteById(id: Long): Boolean {
         log.info("Deleting Profile: {}", id)
-        return profileService.deleteById(id)
+        return employeeService.deleteById(id)
     }
 
     @Get("/findAll")
     fun findAll(): Iterable<Employee> {
         log.info("find All")
-        return profileService.findAll()
+        return employeeService.findAll()
     }
 
     @Put("/update")
     fun update(@Body profile: Employee): Employee {
         log.info("update {}", profile)
-        return profileService.update(profile)
+        return employeeService.update(profile)
     }
 
     companion object {
