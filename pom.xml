@@ -62,6 +62,20 @@
       <artifactId>micronaut-test-junit5</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+    <dependency>
+      <groupId>javax.persistence</groupId>
+      <artifactId>javax.persistence-api</artifactId>
+      <version>2.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.micronaut.data/micronaut-data-model -->
+    <dependency>
+      <groupId>io.micronaut.data</groupId>
+      <artifactId>micronaut-data-model</artifactId>
+      <version>2.4.4</version>
+    </dependency>
+
+
     <dependency>
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-http-client</artifactId>
@@ -107,7 +121,7 @@
         <groupId>io.micronaut.build</groupId>
         <artifactId>micronaut-maven-plugin</artifactId>
       </plugin>
-      
+
       <plugin>
         <artifactId>kotlin-maven-plugin</artifactId>
         <groupId>org.jetbrains.kotlin</groupId>
@@ -132,16 +146,16 @@
                 <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
               </sourceDirs>
               <annotationProcessorPaths combine.self="override">
-               <annotationProcessorPath>
-                 <groupId>io.micronaut</groupId>
-                 <artifactId>micronaut-inject-java</artifactId>
-                 <version>${micronaut.version}</version>
-               </annotationProcessorPath>
-               <annotationProcessorPath>
-                 <groupId>io.micronaut</groupId>
-                 <artifactId>micronaut-validation</artifactId>
-                 <version>${micronaut.version}</version>
-               </annotationProcessorPath>
+                <annotationProcessorPath>
+                  <groupId>io.micronaut</groupId>
+                  <artifactId>micronaut-inject-java</artifactId>
+                  <version>${micronaut.version}</version>
+                </annotationProcessorPath>
+                <annotationProcessorPath>
+                  <groupId>io.micronaut</groupId>
+                  <artifactId>micronaut-validation</artifactId>
+                  <version>${micronaut.version}</version>
+                </annotationProcessorPath>
               </annotationProcessorPaths>
               <annotationProcessorArgs>
                 <annotationProcessorArg>micronaut.processing.group=example.micronaut</annotationProcessorArg>
@@ -170,16 +184,16 @@
                 <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
               </sourceDirs>
               <annotationProcessorPaths combine.self="override">
-               <annotationProcessorPath>
-                 <groupId>io.micronaut</groupId>
-                 <artifactId>micronaut-inject-java</artifactId>
-                 <version>${micronaut.version}</version>
-               </annotationProcessorPath>
-               <annotationProcessorPath>
-                 <groupId>io.micronaut</groupId>
-                 <artifactId>micronaut-validation</artifactId>
-                 <version>${micronaut.version}</version>
-               </annotationProcessorPath>
+                <annotationProcessorPath>
+                  <groupId>io.micronaut</groupId>
+                  <artifactId>micronaut-inject-java</artifactId>
+                  <version>${micronaut.version}</version>
+                </annotationProcessorPath>
+                <annotationProcessorPath>
+                  <groupId>io.micronaut</groupId>
+                  <artifactId>micronaut-validation</artifactId>
+                  <version>${micronaut.version}</version>
+                </annotationProcessorPath>
               </annotationProcessorPaths>
             </configuration>
           </execution>
