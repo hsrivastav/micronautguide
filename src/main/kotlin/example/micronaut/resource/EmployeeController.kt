@@ -38,9 +38,9 @@ class EmployeeController {
     }
 
     @Put("/update")
-    fun update(@Body profile: Employee): Employee {
-        log.info("update {}", profile)
-        return employeeService.update(profile)
+    fun update(@Body employee: Employee): Employee {
+        log.info("update {}", employee)
+        return employeeService.update(employee)
     }
 
     companion object {
