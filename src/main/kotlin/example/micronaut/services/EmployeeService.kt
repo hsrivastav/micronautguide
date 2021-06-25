@@ -9,23 +9,23 @@ import org.slf4j.LoggerFactory
 
 @Singleton
 @Transactional
-class EmployeeService {
+open class EmployeeService {
 
     @Inject
-     lateinit var employeeRepository: EmployeeRepository
+     open lateinit var employeeRepository: EmployeeRepository
 
-     fun save(profile: Employee): Employee {
+    open fun save(profile: Employee): Employee {
         log.info("Saving Profile :{}", profile)
         employeeRepository.save(profile)
         return profile
     }
 
-     fun findById(id: Long): Employee {
+    open fun findById(id: Long): Employee {
         log.info("Finding Profile by id:{}", id)
         return employeeRepository.findById(id).orElse(null)
     }
 
-     fun deleteById(id: Long): Boolean {
+    open fun deleteById(id: Long): Boolean {
         try {
             employeeRepository.deleteById(id)
             log.info("Deleting Profile by id:{}", id)
@@ -37,12 +37,12 @@ class EmployeeService {
         }
     }
 
-     fun findAll(): Iterable<Employee> {
+    open fun findAll(): Iterable<Employee> {
         log.info("Find All")
         return employeeRepository.findAll()
     }
 
-     fun update(profile: Employee): Employee {
+    open fun update(profile: Employee): Employee {
         log.info("update {}", profile)
         return employeeRepository.update(profile)
 

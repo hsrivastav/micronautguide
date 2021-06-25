@@ -75,6 +75,22 @@
       <version>2.4.4</version>
     </dependency>
 
+    <dependency>
+      <groupId>io.micronaut.configuration</groupId>
+      <artifactId>micronaut-jdbc-tomcat</artifactId>
+      <version>1.0.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.data</groupId>
+      <artifactId>micronaut-data-hibernate-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.200</version>
+      <scope>runtime</scope>
+    </dependency>
 
     <dependency>
       <groupId>io.micronaut</groupId>
@@ -146,6 +162,13 @@
                 <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
               </sourceDirs>
               <annotationProcessorPaths combine.self="override">
+
+                  <path>
+                    <groupId>io.micronaut.data</groupId>
+                    <artifactId>micronaut-data-processor</artifactId>
+                    <version>2.4.4</version>
+                  </path>
+
                 <annotationProcessorPath>
                   <groupId>io.micronaut</groupId>
                   <artifactId>micronaut-inject-java</artifactId>
@@ -184,11 +207,11 @@
                 <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
               </sourceDirs>
               <annotationProcessorPaths combine.self="override">
-                <annotationProcessorPath>
-                  <groupId>io.micronaut</groupId>
-                  <artifactId>micronaut-inject-java</artifactId>
-                  <version>${micronaut.version}</version>
-                </annotationProcessorPath>
+<!--                <annotationProcessorPath>-->
+<!--                  <groupId>io.micronaut</groupId>-->
+<!--                  <artifactId>micronaut-inject-java</artifactId>-->
+<!--                  <version>${micronaut.version}</version>-->
+<!--                </annotationProcessorPath>-->
                 <annotationProcessorPath>
                   <groupId>io.micronaut</groupId>
                   <artifactId>micronaut-validation</artifactId>
